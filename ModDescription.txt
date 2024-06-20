@@ -1,0 +1,3 @@
+This mod fixes the "super hero" aspect of the One Army Must Stand Guard Setting.
+
+I am fairly certain that this mod has no effect if the One Army Must Stand Guard settings is off.
