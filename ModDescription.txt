@@ -1,3 +1,3 @@
-This mod fixes the "super hero" aspect of the One Army Must Stand Guard setting.
+This mod addresses the issue where one army cannot kill one army due to the One Army Must Stand Guard setting.
 
-I am fairly certain that this mod has no effect if the One Army Must Stand Guard setting is off.
+This only works when the Attack Percentage is 50% or more. Less than 50% means that one army will not kill anything anyway.
