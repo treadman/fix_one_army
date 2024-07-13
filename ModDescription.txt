@@ -16,3 +16,18 @@ When an order is executed on the order list,
                     if the attack failed,
                         if no defenders were killed,
                             kill that one defending army
+
+
+
+When one army attacks one army, the defending army is killed.
+
+    - The territory is still owned by the defender, but with 0 armies.
+
+This mod will only work when the One Army Must Stand Guard setting is on.
+
+    - This setting allows the defending army to survive
+    - This mod fixes that
+
+This only works when the offense kill rate is 50% or more.
+
+    A kill rate of less than 50% means one army will not kill anything anyway.
