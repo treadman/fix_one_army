@@ -1,33 +1,7 @@
-This mod addresses the issue where one army cannot kill one army due to the One Army Must Stand Guard setting.
+With this mod, when one army attacks one army, the defending army will be killed, leaving the territory with zero armies.
 
-The problem is,
-    an order is executed where a single army attacks
-    "analyze attack" says that 1 army kills 1 army
-    but it doesn't
-    the single attacker is killed, while the single defender survives
+This mod only works when the One Army Must Stand Guard setting is on.
 
-This only works when the offense kill rate is 50% or more. Less than 50% means that one army will not kill anything anyway.
+This mod only works when the offense kill rate is 50% or more. Less than that means one army will not kill anything anyway.
 
-When an order is executed on the order list,
-    if the setting for One Army Must Stand Guard is on,
-        if the offense kill rate is 50% or more,
-            if the order is for troop movement,
-                if this resulted in an attack,
-                    if the attack failed,
-                        if no defenders were killed,
-                            kill that one defending army
-
-
-
-When one army attacks one army, the defending army is killed.
-
-    - The territory is still owned by the defender, but with 0 armies.
-
-This mod will only work when the One Army Must Stand Guard setting is on.
-
-    - This setting allows the defending army to survive
-    - This mod fixes that
-
-This only works when the offense kill rate is 50% or more.
-
-    A kill rate of less than 50% means one army will not kill anything anyway.
+This mod allows for that one army standing guard to be killed by one attacking army.
