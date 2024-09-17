@@ -12,13 +12,13 @@ function Server_AdvanceTurn_Order(game, order, result, skipThisOrder, addNewOrde
                         -- if the attack failed
                         if(result.DefendingArmiesKilled.NumArmies == 0) then
                             -- if no defending armies were killed
-                            -- how is this possible with a kill rate of 50% or more?
-                            -- get the territory
+                            -- get the defending territory
                             local terr = game.ServerGame.LatestTurnStanding.Territories[order.To];
-                            if(terr.NumArmies.NumArmies = 1) then
-                                -- if the territory had one army (see One Army Must Stand Guard setting)
-                                -- this final condition skips the order if there is a special character with 0 armies
-                                -- create an order to kill that army standing guard
+                            if(terr.NumArmies.NumArmies == 1) then
+                                -- if the territory has one army (see One Army Must Stand Guard setting)
+                                --    skips the order when the territory has a special character and 0 armies
+                                --    executes the order only if there is exactly one defending army
+                                -- add an order to kill that army standing guard
                                 terrMod = WL.TerritoryModification.Create(terr.ID);
                                 terrMod.SetArmiesTo = 0;
                                 addNewOrder(WL.GameOrderEvent.Create(terr.OwnerPlayerID,"Defending Army Killed",{},{terrMod}));
