@@ -22,6 +22,15 @@ function Server_AdvanceTurn_Order(game, order, result, skipThisOrder, addNewOrde
                                 terrMod = WL.TerritoryModification.Create(terr.ID);
                                 terrMod.SetArmiesTo = 0;
                                 addNewOrder(WL.GameOrderEvent.Create(terr.OwnerPlayerID,"Defending Army Killed",{},{terrMod}));
+                                if(terr.OwnerPlayerID ~= WL.PlayerID.Neutral) then
+                                    -- if the territory is not neutral
+                                    if Mod.Settings.goNeutral ~= nil and Mod.Settings.goNeutral == true then
+                                        -- game creator wants the territory to also go neutral
+                                        terrMod = WL.TerritoryModification.Create(terr.ID);
+                                        terrMod.SetOwnerOpt = WL.PlayerID.Neutral;
+                                        addNewOrder(WL.GameOrderEvent.Create(terr.OwnerPlayerID, "Territory Now Neutral", {}, {terrMod}));
+                                    end
+                                end
                             end
                         end
                     end
