@@ -6,7 +6,7 @@ function Server_AdvanceTurn_Order(game, order, result, skipThisOrder, addNewOrde
             -- if offensive kill rate is 50% or more
             if(order.proxyType == 'GameOrderAttackTransfer') then
                 -- if this is a movement order
-                if(result.IsAttack) then
+                if(result.IsAttack and result.ActualArmies.NumArmies > 0) then
                     -- if this is an attack
                     if(result.IsSuccessful == false) then
                         -- if the attack failed
